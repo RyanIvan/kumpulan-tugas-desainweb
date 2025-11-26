@@ -1,0 +1,66 @@
+/* File: style.css */
+
+/* Mengatur style untuk body halaman */
+body {
+    background-color: #f0f0f0; /* Warna latar belakang abu-abu terang */
+    font-family: Arial, sans-serif; /* Menggunakan font Arial */
+}
+
+/* Mengatur style untuk header */
+header {
+    background-color: #4CAF50; /* Warna hijau */
+    padding: 20px; /* Jarak di dalam header */
+    text-align: center; /* Teks di tengah */
+    border: 1px solid #4CAF50; /* Garis tepi dengan warna yang sama */
+    border-radius: 5px; /* Sudut membulat */
+    color: white; /* Teks berwarna putih */
+    font-size: 24px; /* Ukuran font besar */
+}
+
+/* Mengatur container utama */
+.container {
+    display: flex; /* Menggunakan Flexbox */
+    gap: 20px;
+    margin-top: 20px; /* Jarak dari atas */
+    border: 1px solid #ddd; /* Garis tepi abu-abu */
+    background-color: #fff; /* Latar belakang putih */
+    border-radius: 5px; /* Sudut membulat */
+    padding: 10px;
+}
+
+/* Mengatur sidebar kiri */
+.sidebar {
+    flex: 1; /* Mengambil 1 bagian dari ruang kosong */
+    background-color: #333; /* Warna abu-abu gelap */
+    color: white; /* Teks putih */
+    padding: 20px; /* Jarak di dalam sidebar */
+    border-radius: 5px 0 0 5px; /* Sudut membulat hanya di kiri */
+}
+
+.sidebar ul {
+    list-style-type: none; /* Menghilangkan bullet point */
+    padding: 0; /* Menghilangkan padding default */
+}
+
+.sidebar li {
+    background-color: #555; /* Warna abu-abu yang lebih terang */
+    padding: 10px; /* Jarak di dalam item */
+    margin-bottom: 5px; /* Jarak antar item */
+    border-radius: 3px; /* Sudut membulat */
+}
+
+/* Mengatur konten utama */
+.main-content {
+    flex: 3; /* Mengambil 3 bagian dari ruang kosong */
+    padding: 20px; /* Jarak di dalam konten utama */
+    border-left: 1px solid #ddd; /* Garis pemisah dari sidebar */
+}
+
+/* Mengatur footer */
+footer {
+    background-color: #f1c40f; /* Warna kuning */
+    text-align: center; /* Teks di tengah */
+    padding: 10px; /* Jarak di dalam footer */
+    margin-top: 20px; /* Jarak dari atas */
+    border-radius: 5px; /* Sudut membulat */
+}

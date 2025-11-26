@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery - Jam Digital</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        #jam {
+            font-size: 3em;
+            color: #333;
+        }
+        #start {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <center>
+        <h1 id="jam">Tekan START/STOP</h1>
+        <br>
+        <button id="start">START/STOP</button>
+    </center>
+
+    <script>
+        $(document).ready(function() {
+            const $jamElement = $('#jam');
+            const $startButton = $('#start');
+            let intervalID = null; 
+            function formatWaktu(angka) {
+                return angka < 10 ? '0' + angka : angka;
+            }
+
+            
+            function tampilkanJam() {
+                const now = new Date();
+                
+                
+                const jam = formatWaktu(now.getHours());
+                const menit = formatWaktu(now.getMinutes());
+                const detik = formatWaktu(now.getSeconds());
+
+                
+                const hari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'][now.getDay()];
+                const tanggal = now.toLocaleDateString('id-ID', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+
+                
+                const stringJam = jam + ':' + menit + ':' + detik;
+                const stringTanggal = hari + ', ' + tanggal;
+                
+               
+                $jamElement.html(stringTanggal + '<br>' + stringJam);
+            }
+
+            
+            function toggleJam() {
+                if (intervalID) {
+                    clearInterval(intervalID);
+                    intervalID = null;
+                    $jamElement.text("Jam Berhenti");
+                } else {
+                    tampilkanJam(); 
+                    intervalID = setInterval(tampilkanJam, 1000);
+                }
+            }
+
+            
+            $startButton.on('click', toggleJam);
+            
+            
+        });
+    </script>
+</body>
+</html>

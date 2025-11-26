@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+    <h1>Kalkulator Sederhana JavaScript</h1>
+    <p>Buka konsol (F12) untuk melihat pesan error jika ada, dan perhatikan jendela dialog saat tombol diklik.</p>
+    
+    <button onclick="jalankanKalkulator()">Jalankan Kalkulator</button>
+
+    <script>
+        function jalankanKalkulator() {
+            // Meminta input dua angka
+            const angka1 = parseFloat(prompt("Masukkan Angka Pertama:"));
+            const angka2 = parseFloat(prompt("Masukkan Angka Kedua:"));
+
+            // Memeriksa apakah input adalah angka yang valid
+            if (isNaN(angka1) || isNaN(angka2)) {
+                alert("Input tidak valid. Harap masukkan angka.");
+                return;
+            }
+
+            // Meminta pilihan operasi
+            const operasi = prompt("Pilih operasi:\n1. Jumlah\n2. Kurang\n3. Kali\n4. Bagi");
+
+            let hasil;
+            let operatorSimbol;
+
+            switch (operasi) {
+                case '1':
+                case 'Jumlah':
+                    hasil = angka1 + angka2;
+                    operatorSimbol = '+';
+                    break;
+                case '2':
+                case 'Kurang':
+                    hasil = angka1 - angka2;
+                    operatorSimbol = '-';
+                    break;
+                case '3':
+                case 'Kali':
+                    hasil = angka1 * angka2;
+                    operatorSimbol = '×';
+                    break;
+                case '4':
+                case 'Bagi':
+                    // Penanganan kasus pembagian dengan nol
+                    if (angka2 === 0) {
+                        alert("Error: Pembagian dengan nol tidak diizinkan.");
+                        return;
+                    }
+                    hasil = angka1 / angka2;
+                    operatorSimbol = '÷';
+                    break;
+                default:
+                    alert("Pilihan operasi tidak valid.");
+                    return;
+            }
+
+            // Menampilkan hasil
+            alert(`Hasil dari ${angka1} ${operatorSimbol} ${angka2} adalah: ${hasil.toFixed(2)}`); // Menggunakan toFixed(2) untuk hasil desimal
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan 1b - Media Query</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        /* By default, the logo is hidden */
+        .logo-uns {
+            display: none;
+        }
+
+        /* Media query for screens LARGER than 1024px */
+        @media only screen and (min-width: 1025px) {
+            .logo-uns {
+                display: block; /* Show the logo */
+                margin: 20px auto; /* Center the logo */
+                border: 2px solid #ccc;
+                padding: 10px;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h3>Tampilan Logo UNS</h3>
+    <p>Logo UNS hanya akan muncul ketika lebar layar lebih dari 1024 piksel.</p>
+    
+    <img src="image/logo.png" alt="Logo UNS" class="logo-uns">
+
+</body>
+</html>

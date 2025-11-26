@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan 2b - Desain Responsif Flexbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        #wrapper {
+            margin: auto;
+            width: 95%;
+            max-width: 1200px;
+        }
+
+        #header, #footer {
+            padding: 20px;
+            border: 2px solid red;
+            text-align: center;
+        }
+
+        #header {
+            height: 100px;
+        }
+
+        #footer {
+            height: 80px;
+        }
+        
+        
+        #nav {
+            padding: 20px;
+            border: 2px solid red;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            
+            
+            display: flex;
+            
+            
+            flex-wrap: wrap; 
+            
+           
+            justify-content: space-around;
+        }
+
+        .box {
+            width: 22%; 
+            margin: 1%;
+            height: 120px;
+            background: red;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+        }
+        
+        @media only screen and (max-width: 1080px) {
+            .box {
+                width: 45%; 
+                margin: 2%;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 640px) {
+            .box {
+                width: 100%; 
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h2>Header</h2>
+        </div>
+        
+        <div id="nav">
+            <h2 style="width: 100%; text-align: center; margin-bottom: 20px;">Services</h2>
+            <div class="box">BOX 1</div>
+            <div class="box">BOX 2</div>
+            <div class="box">BOX 3</div>
+            <div class="box">BOX 4</div>
+        </div>
+        
+        <div id="footer">
+            <h2>Footer</h2>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menggunakan media Query CSS3</title>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+
+    <style>
+        .smartphone{
+            display: none;
+        }
+        .logo-uns {
+            display: none;
+        }
+
+        @media only screen and (max-width: 420px){
+            body{
+                background-color: yellow;
+            }
+            .smartphone{
+                display: block;
+            }
+        }
+        @media only screen and (min-width: 1025px) {
+            .logo-uns {
+                display: block; /* Show the logo */
+                margin: 20px auto; /* Center the logo */
+                border: 2px solid #ccc;
+                padding: 10px;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h3>Menggunakan Media Query CSS3</h3>
+    <div class="smartphone">
+        <h2>Terdeteksi Ukuran smartphone</h2>
+    </div>
+    <h3>Tampilan Logo UNS</h3>
+    <p>Logo UNS hanya akan muncul ketika lebar layar lebih dari 1024 piksel.</p>
+    
+    <img src="image/logo.png" alt="Logo UNS" class="logo-uns">
+</body>
+</html>
